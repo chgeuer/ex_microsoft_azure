@@ -1,0 +1,2 @@
+defmodule ExMicrosoftAzure do
+end
