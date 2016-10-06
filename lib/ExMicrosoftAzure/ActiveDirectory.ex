@@ -22,7 +22,7 @@ defmodule ExMicrosoftAzure.ActiveDirectory do
   def handle_call({:get_access_token, %{ environment: environment, aad_tenant_id: aad_tenant_id, client_id: client_id, client_secret:  client_secret }}, _from, stats) do
     client = OAuth2.Client.new([
       strategy: OAuth2.Strategy.ClientCredentials,
-      site: ExAzure.Environment.get(environment).active_directory_endpoint <> aad_tenant_id,
+      site: ExMicrosoftAzure.Environment.get(environment).active_directory_endpoint <> aad_tenant_id,
       token_url: "/oauth2/token?api-version=1.0",
       token_method: :post,
       client_id: client_id,
@@ -30,7 +30,7 @@ defmodule ExMicrosoftAzure.ActiveDirectory do
     ])
 
     %OAuth2.Client{ token: %OAuth2.AccessToken{ access_token: access_token } } = client |> OAuth2.Client.get_token!(
-        [ auth_scheme: "request_body", resource: ExAzure.Environment.get(environment).resource_manager_endpoint ],
+        [ auth_scheme: "request_body", resource: ExMicrosoftAzure.Environment.get(environment).resource_manager_endpoint ],
         [ ],
         [ proxy: "http://127.0.0.1:8888", ssl_options: [ cacertfile: "C:\\Users\\chgeuer\\Desktop\\fiddler.cer"] ]
       )

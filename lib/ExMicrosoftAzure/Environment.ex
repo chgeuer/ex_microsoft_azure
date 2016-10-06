@@ -41,7 +41,7 @@ defmodule ExMicrosoftAzure.Environment do
   def get(:azure_german_cloud), do: azure_german_cloud
 
   defp azure_cloud do
-    %ExAzure.Environment {
+    %ExMicrosoftAzure.Environment {
       name: "AzurePublicCloud",
       management_portal_url: "http://manage.windowsazure.com/",
       publish_settings_url: "https://manage.windowsazure.compublishsettings/index",
@@ -60,7 +60,7 @@ defmodule ExMicrosoftAzure.Environment do
   end
 
   defp azure_usgovernment_cloud do
-    %ExAzure.Environment {
+    %ExMicrosoftAzure.Environment {
       name: "AzureUSGovernmentCloud",
       management_portal_url: "https://manage.windowsazure.us/",
       publish_settings_url: "https://manage.windowsazure.us/publishsettings/index",
@@ -79,7 +79,7 @@ defmodule ExMicrosoftAzure.Environment do
   end
 
   defp azure_china_cloud do
-    %ExAzure.Environment {
+    %ExMicrosoftAzure.Environment {
       name: "AzureChinaCloud",
       management_portal_url:  "https://manage.chinacloudapi.com/",
       publish_settings_url: "https://manage.chinacloudapi.com/publishsettings/index",
@@ -98,7 +98,7 @@ defmodule ExMicrosoftAzure.Environment do
   end
 
   defp azure_german_cloud do
-    %ExAzure.Environment {
+    %ExMicrosoftAzure.Environment {
       name: "AzureGermanCloud",
       management_portal_url: "http://portal.microsoftazure.de/",
       publish_settings_url: "https://manage.microsoftazure.de/publishsettings/index",
