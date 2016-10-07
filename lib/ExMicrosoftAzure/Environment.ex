@@ -1,8 +1,9 @@
 defmodule ExMicrosoftAzure.Environment do
 
   @moduledoc """
-  A collection of currently available Microsoft Azure Cloud Environments 
+  A collection of currently available Microsoft Azure Cloud Environments.
   """
+
   defstruct name: nil,
     management_portal_url: nil,
     publish_settings_url: nil,
@@ -17,6 +18,17 @@ defmodule ExMicrosoftAzure.Environment do
     trafficmanager_dns_suffix: nil,
     keyvault_dns_suffix: nil,
     servicebus_dns_suffix: nil
+
+  @doc """
+  Returns the cloud environment's endpoints.
+
+  ## Examples
+
+     iex> ExMicrosoftAzure.Environment.get(:azure_german_cloud).management_portal_url
+     "http://portal.microsoftazure.de/"
+
+  """
+  def (cloud_environment)
 
   def get(:azure), do: get(:azure_cloud)
   def get(:public), do: get(:azure_cloud)

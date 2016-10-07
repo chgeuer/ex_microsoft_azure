@@ -31,7 +31,8 @@ defmodule ExMicrosoftAzure.Mixfile do
       {:oauth2, "~> 0.7"},
       {:poison, "~> 2.2"},
       {:joken, "~> 1.3"},
-      {:ex_crypto, "~> 0.1.1"}
+      {:ex_crypto, "~> 0.1.1"},
+      {:ex_doc, "~> 0.14.1", only: :dev}
     ]
   end
 end
