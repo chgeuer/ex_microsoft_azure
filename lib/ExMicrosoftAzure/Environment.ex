@@ -24,8 +24,11 @@ defmodule ExMicrosoftAzure.Environment do
 
   ## Examples
 
-     iex> ExMicrosoftAzure.Environment.get(:azure_german_cloud).management_portal_url
-     "http://portal.microsoftazure.de/"
+  iex> ExMicrosoftAzure.Environment.get(:azure_cloud).storage_dns_suffix
+  "core.windows.net"
+
+  iex> ExMicrosoftAzure.Environment.get(:azure_german_cloud).management_portal_url
+  "http://portal.microsoftazure.de/"
 
   """
   def (cloud_environment)
